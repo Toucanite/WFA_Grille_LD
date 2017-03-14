@@ -1,2 +1,10 @@
 C:\Users\DONATIL_INFO\Documents\Visual Studio 2013\Projects\WFA_Grille_LD\WFA_Grille_LD\bin\Debug\WFA_Grille_LD.exe.config
 C:\Users\DONATIL_INFO\Documents\GitHub\WFA_Grille_LD\WFA_Grille_LD\bin\Debug\WFA_Grille_LD.exe.config
+C:\Users\DONATIL_INFO\Documents\GitHub\WFA_Grille_LD\WFA_Grille_LD\bin\Debug\WFA_Grille_LD.exe
+C:\Users\DONATIL_INFO\Documents\GitHub\WFA_Grille_LD\WFA_Grille_LD\bin\Debug\WFA_Grille_LD.pdb
+C:\Users\DONATIL_INFO\Documents\GitHub\WFA_Grille_LD\WFA_Grille_LD\obj\Debug\WFA_Grille_LD.csprojResolveAssemblyReference.cache
+C:\Users\DONATIL_INFO\Documents\GitHub\WFA_Grille_LD\WFA_Grille_LD\obj\Debug\WFA_Grille_LD.frmMain.resources
+C:\Users\DONATIL_INFO\Documents\GitHub\WFA_Grille_LD\WFA_Grille_LD\obj\Debug\WFA_Grille_LD.Properties.Resources.resources
+C:\Users\DONATIL_INFO\Documents\GitHub\WFA_Grille_LD\WFA_Grille_LD\obj\Debug\WFA_Grille_LD.csproj.GenerateResource.Cache
+C:\Users\DONATIL_INFO\Documents\GitHub\WFA_Grille_LD\WFA_Grille_LD\obj\Debug\WFA_Grille_LD.exe
+C:\Users\DONATIL_INFO\Documents\GitHub\WFA_Grille_LD\WFA_Grille_LD\obj\Debug\WFA_Grille_LD.pdb

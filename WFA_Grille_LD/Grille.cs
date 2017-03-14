@@ -23,6 +23,8 @@ namespace WFA_Grille_LD
             this.tailleCaseY = taille.Height / nbrCaseY;
             this.nbrCaseX = nbrCaseX;
             this.nbrCaseY = nbrCaseY;
+            this.tPointsCaseX = new Point[nbrCaseX, 2];
+            this.tPointsCaseY = new Point[nbrCaseY, 2];
 
             for (int i = 0; i < nbrCaseX; i++)
             {
@@ -32,8 +34,8 @@ namespace WFA_Grille_LD
 
             for (int i = 0; i < nbrCaseY; i++)
             {
-                this.tPointsCaseY[i, 0] = new Point(position.Y + i * tailleCaseY, position.X);
-                this.tPointsCaseY[i, 1] = new Point(position.Y + i * tailleCaseY, position.X + taille.Width);
+                this.tPointsCaseY[i, 0] = new Point(position.X, position.Y + i * tailleCaseY);
+                this.tPointsCaseY[i, 1] = new Point(position.X + taille.Width, position.Y + i * tailleCaseY);
             }
 
         }
