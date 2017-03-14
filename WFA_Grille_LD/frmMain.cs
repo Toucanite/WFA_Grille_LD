@@ -12,10 +12,7 @@ namespace WFA_Grille_LD
 {
     public partial class frmMain : Form
     {
-        Grille maGrille1 = new Grille(new Point(20, 20), new Size(100, 100), 10, 10);
-        Grille maGrille2 = new Grille(new Point(150, 20), new Size(200, 100), 10, 10);
-        Grille maGrille3 = new Grille(new Point(20, 150), new Size(330, 200), 45, 10);
-        Grille maGrille4 = new Grille(new Point(370, 20), new Size(200, 330), 3, 80);
+        Grille maGrille1 = new Grille(new Point(10, 10), new Size(100, 100), 10, 10);
 
         public frmMain()
         {
@@ -25,10 +22,105 @@ namespace WFA_Grille_LD
         private void frmMain_Paint(object sender, PaintEventArgs e)
         {
             maGrille1.Paint(sender, e);
-            maGrille2.Paint(sender, e);
-            maGrille3.Paint(sender, e);
-            maGrille4.Paint(sender, e);
-            Grille t = new Grille();
+        }
+
+        private void frmMain_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                tmrTailleGrille.Enabled = true;
+            }
+            if(e.Button == MouseButtons.Right)
+            {
+                tmrPosGrille.Enabled = true;
+            }
+            
+        }
+
+        private void frmMain_MouseUp(object sender, MouseEventArgs e)
+        {
+            tmrTailleGrille.Enabled = false;
+            tmrPosGrille.Enabled = false;
+        }
+
+        private void tmrTailleGrille_Tick(object sender, EventArgs e)
+        {
+            // Créer un point qui correspond à la position de la souris
+            // la "-this.location" permet d'avoir la position sur la fenetre et non pas sur l'écran
+            Point mp = new Point(MousePosition.X - this.Location.X - maGrille1.Position.X, MousePosition.Y - this.Location.Y - maGrille1.Position.Y);
+
+            // Switch de gael
+            // Permet de sortir les bordure du calcul de la fenetre
+            switch (FormBorderStyle)
+            {
+                case FormBorderStyle.Fixed3D:
+                    mp.Offset(-10, -32);
+                    break;
+                case FormBorderStyle.FixedDialog:
+                    mp.Offset(-8, -30);
+                    break;
+                case FormBorderStyle.FixedSingle:
+                    mp.Offset(-8, -30);
+                    break;
+                case FormBorderStyle.FixedToolWindow:
+                    mp.Offset(-8, -26);
+                    break;
+                case FormBorderStyle.None:
+                    mp.Offset(0, 0);
+                    break;
+                case FormBorderStyle.Sizable:
+                    mp.Offset(-8, -30);
+                    break;
+                case FormBorderStyle.SizableToolWindow:
+                    mp.Offset(-8, -26);
+                    break;
+                default:
+                    break;
+            }
+
+            // Attribue le point ou l'utilisateur à cliqué en tant que taille de la grille
+            maGrille1.Taille = new Size(mp.X, mp.Y);
+            Invalidate();
+        }
+
+        private void tmrPosGrille_Tick(object sender, EventArgs e)
+        {
+            // Créer un point qui correspond à la position de la souris
+            // la "-this.location" permet d'avoir la position sur la fenetre et non pas sur l'écran
+            Point mp = new Point(MousePosition.X - this.Location.X, MousePosition.Y - this.Location.Y);
+
+            // Switch de gael
+            // Permet de sortir les bordure du calcul de la fenetre
+            switch (FormBorderStyle)
+            {
+                case FormBorderStyle.Fixed3D:
+                    mp.Offset(-10, -32);
+                    break;
+                case FormBorderStyle.FixedDialog:
+                    mp.Offset(-8, -30);
+                    break;
+                case FormBorderStyle.FixedSingle:
+                    mp.Offset(-8, -30);
+                    break;
+                case FormBorderStyle.FixedToolWindow:
+                    mp.Offset(-8, -26);
+                    break;
+                case FormBorderStyle.None:
+                    mp.Offset(0, 0);
+                    break;
+                case FormBorderStyle.Sizable:
+                    mp.Offset(-8, -30);
+                    break;
+                case FormBorderStyle.SizableToolWindow:
+                    mp.Offset(-8, -26);
+                    break;
+                default:
+                    break;
+            }
+
+            // Attribue le point ou l'utilisateur à cliqué en tant que taille de la grille
+            maGrille1.Position = mp;
+            Invalidate();
         }
     }
 }

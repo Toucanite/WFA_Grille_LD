@@ -102,8 +102,13 @@ namespace WFA_Grille_LD
         /// </summary>
         public Point Position
         {
-            get { return position; }
-            set { position = value; }
+            get { 
+                return position; 
+            }
+            set { 
+                position = value;
+                MajTables();
+            }
         }
 
         /// <summary>
@@ -111,8 +116,13 @@ namespace WFA_Grille_LD
         /// </summary>
         public Size Taille
         {
-            get { return taille; }
-            set { taille = value; }
+            get { 
+                return taille; 
+            }
+            set { 
+                taille = value;
+                MajTables();
+            }
         }
 
         /// <summary>
@@ -148,33 +158,19 @@ namespace WFA_Grille_LD
         /// </summary>
         private void MajTables()
         {
-            /*  Les conditions permettent de vérifier si les valeurs ont changées.
-             *  Etant donnée que je réassigne toute les points définissant les traits
-             *  de la grille ces conditions évite un surplus de calcul inutile lorsque
-             *  une valeur n'a pas changé.
-             */
+            tailleCaseX = taille.Width / (float)nbrCaseX;
+            tailleCaseY = taille.Height / (float)nbrCaseY;
 
-            if (tailleCaseX != (taille.Width / (float)nbrCaseX))
+            for (int i = 0; i < nbrCaseX; i++)
             {
-                tailleCaseX = taille.Width / (float)nbrCaseX;
-
-                for (int i = 0; i < nbrCaseX; i++)
-                {
-                    tPointsCaseX[i, 0] = new PointF(position.X + i * tailleCaseX, position.Y);
-                    tPointsCaseX[i, 1] = new PointF(position.X + i * tailleCaseX, position.Y + taille.Height);
-                }
+                tPointsCaseX[i, 0] = new PointF(position.X + i * tailleCaseX, position.Y);
+                tPointsCaseX[i, 1] = new PointF(position.X + i * tailleCaseX, position.Y + taille.Height);
             }
 
-
-            if (tailleCaseY != (taille.Height / (float)nbrCaseY))
+            for (int i = 0; i < nbrCaseY; i++)
             {
-                tailleCaseY = taille.Height / (float)nbrCaseY;
-
-                for (int i = 0; i < nbrCaseY; i++)
-                {
-                    tPointsCaseY[i, 0] = new PointF(position.X, position.Y + i * tailleCaseY);
-                    tPointsCaseY[i, 1] = new PointF(position.X + taille.Width, position.Y + i * tailleCaseY);
-                }
+                tPointsCaseY[i, 0] = new PointF(position.X, position.Y + i * tailleCaseY);
+                tPointsCaseY[i, 1] = new PointF(position.X + taille.Width, position.Y + i * tailleCaseY);
             }
         }
 
