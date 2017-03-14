@@ -12,7 +12,10 @@ namespace WFA_Grille_LD
 {
     public partial class frmMain : Form
     {
-        Grille maGrille = new Grille(new Point(20, 20), new Size(300, 200), 45, 5);
+        Grille maGrille1 = new Grille(new Point(20, 20), new Size(100, 100), 10, 10);
+        Grille maGrille2 = new Grille(new Point(150, 20), new Size(200, 100), 10, 10);
+        Grille maGrille3 = new Grille(new Point(20, 150), new Size(330, 200), 45, 10);
+        Grille maGrille4 = new Grille(new Point(370, 20), new Size(200, 330), 3, 80);
 
         public frmMain()
         {
@@ -21,7 +24,10 @@ namespace WFA_Grille_LD
 
         private void frmMain_Paint(object sender, PaintEventArgs e)
         {
-            maGrille.Paint(sender, e);
+            maGrille1.Paint(sender, e);
+            maGrille2.Paint(sender, e);
+            maGrille3.Paint(sender, e);
+            maGrille4.Paint(sender, e);
         }
     }
 }
