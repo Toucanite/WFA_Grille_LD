@@ -28,6 +28,7 @@ namespace WFA_Grille_LD
             maGrille2.Paint(sender, e);
             maGrille3.Paint(sender, e);
             maGrille4.Paint(sender, e);
+            Grille t = new Grille();
         }
     }
 }
