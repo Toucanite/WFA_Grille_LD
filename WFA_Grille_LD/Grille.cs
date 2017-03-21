@@ -135,6 +135,7 @@ namespace WFA_Grille_LD
             }
             set { 
                 nbrCaseX = value;
+                tPointsCaseX = new PointF[nbrCaseX, 2];
                 MajTables();
             }
         }
@@ -149,6 +150,7 @@ namespace WFA_Grille_LD
             }
             set { 
                 nbrCaseY = value;
+                tPointsCaseY = new PointF[nbrCaseY, 2];
                 MajTables();
             }
         }
@@ -158,6 +160,9 @@ namespace WFA_Grille_LD
         /// </summary>
         private void MajTables()
         {
+            
+            
+
             tailleCaseX = taille.Width / (float)nbrCaseX;
             tailleCaseY = taille.Height / (float)nbrCaseY;
 

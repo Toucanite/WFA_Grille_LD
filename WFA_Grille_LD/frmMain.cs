@@ -34,7 +34,6 @@ namespace WFA_Grille_LD
             {
                 tmrPosGrille.Enabled = true;
             }
-            
         }
 
         private void frmMain_MouseUp(object sender, MouseEventArgs e)
@@ -120,6 +119,18 @@ namespace WFA_Grille_LD
 
             // Attribue le point ou l'utilisateur à cliqué en tant que taille de la grille
             maGrille1.Position = mp;
+            Invalidate();
+        }
+
+        private void hsb_NbrCellulesHorizontal_Scroll(object sender, ScrollEventArgs e)
+        {
+            maGrille1.NombreCaseLargeur = e.NewValue;
+            Invalidate();
+        }
+
+        private void vsb_NbrCellulesVertical_Scroll(object sender, ScrollEventArgs e)
+        {
+            maGrille1.NombreCaseHauteur = e.NewValue;
             Invalidate();
         }
     }
